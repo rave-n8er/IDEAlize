@@ -11,6 +11,8 @@ Run the idealize.php page.
 Fill in the form.  Include a picture/diagram (optional)
 Click Submit to send the data to the server (and optionally upload the picture)
 
+NOTE:
+An "uploads" folder is required off the root of the application, into which files will be uploaded.
 
 
 
