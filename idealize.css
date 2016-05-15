@@ -1,0 +1,18 @@
+﻿
+.required 
+{
+    color:red; 
+    font-weight:bold;
+}
+
+.center-block 
+{
+    float:none;
+}
+
+.human 
+{
+    margin: 0 0 0 12px;
+}
+
+
