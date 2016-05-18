@@ -5,6 +5,7 @@ This app is used to upload new ideas to the server.
 
 DESIGN:
 The app was built using a responsive Bootstrap theme.  A basic PHP routine handles validation and posting. 
+A sample contact page project was used as a starting point.
 
 USAGE:
 Run the idealize.php page.

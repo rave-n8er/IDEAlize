@@ -58,12 +58,23 @@
 		// Post away the data.
 		if (!$errCategory && !$errTitle && !$errDescription && !$errEmail && !$errTnC && !$errFile) {
 		
-			// write the data to a database.
+			// post the data to a webservice url.
+			$.ajax({
+				type: "POST",
+				url: "https://httpbin.org/post",
+				data: {Category: $Category, Title:$Title, Description:$Description, Visibility:$Visibility, Email:$Email, TnCs:$TnCs},
+				success: function(answer){
+					// $result = '<div class="alert alert-success"><h3><span class="glyphicon glyphicon-ok"></span> Your idea has been submitted!</h3><h4>Thank you for sharing your idea with us.</h4></div>';
+					$result = '<div class="alert alert-success"><h4><span class="glyphicon glyphicon-ok"></span> ' . answer . ' </h4></div>';
+			    },
+				error: function(answer){
+					// $result = '<div class="alert alert-danger"><h3><span class="glyphicon glyphicon-warning-sign"></span> Sorry, something went wrong.</h3> <h4>Please correct input errors, and try again.</h4></div>';
+					$result = '<div class="alert alert-danger"><h4><span class="glyphicon glyphicon-warning-sign"></span> ' . answer . ' </h4></div>';
+			    }
+            });
 			
-			// Display a confirmation/post result.
-			$result = '<div class="alert alert-success"><h3><span class="glyphicon glyphicon-ok"></span> Your idea has been submitted!</h3><h4>Thank you for sharing your idea with us.</h4></div>';
 		} else {
-			$result = '<div class="alert alert-danger"><h3><span class="glyphicon glyphicon-warning-sign"></span> Sorry, something went wrong.</h3> <h4>Please correct input errors, and try again.</h4></div>';
+			   $result = '<div class="alert alert-danger"><h3><span class="glyphicon glyphicon-warning-sign"></span> Sorry, something went wrong.</h3> <h4>Please correct input errors, and try again.</h4></div>';
         }
 		
 	}
